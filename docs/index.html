@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrustBite - Food Scanner & Allergy Checker</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary-color: #00c896;
+      --secondary-color: #001f2d;
+      --bg-light: #f5f5f5;
+      --text-dark: #1a1a1a;
+      --text-light: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text-dark);
+      background-color: var(--bg-light);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 0;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #00c896, #007c7a);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .btn-primary {
+      background-color: white;
+      color: var(--primary-color);
+      padding: 14px 28px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      background-color: #f0f0f0;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: var(--secondary-color);
+    }
+
+    .feature-cards,
+    .testimonial-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .card, .testimonial {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      width: 300px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 60px;
+      margin-bottom: 20px;
+    }
+
+    .ingredients-ai {
+      background-color: #e6fff7;
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    .ingredients-ai img {
+      width: 100%;
+      max-width: 500px;
+      margin-top: 20px;
+    }
+
+    .app-preview .video-wrapper {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .cta-download {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cta-download a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 20px;
+      background-color: white;
+      color: var(--primary-color);
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .cta-download a:hover {
+      transform: scale(1.05);
+      background-color: #e4e4e4;
+    }
+
+    footer {
+      background-color: #001f2d;
+      color: #ccc;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* Scroll to top */
+    #toTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary-color);
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 20px;
+      display: none;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    @media (max-width: 768px) {
+      .feature-cards, .testimonial-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll to Top -->
+  <div id="toTop">&#8679;</div>
+
+  <!-- Hero -->
+  <section class="hero" data-aos="fade-in">
+    <div class="container">
+      <h1>TrustBite</h1>
+      <p>Scan. Analyze. Trust Your Bite.</p>
+      <a href="#download" class="btn-primary">Download the App</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" data-aos="fade-up">
+    <div class="container">
+      <h2>What TrustBite Does</h2>
+      <div class="feature-cards">
+        <div class="card" data-aos="zoom-in" data-aos-delay="100">
+          <img src="scan-icon.svg" alt="Scan Icon">
+          <h3>Instant Food Scanning</h3>
+          <p>Use your camera to scan packaged food or ingredients in seconds.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="200">
+          <img src="allergy-icon.svg" alt="Allergy Icon">
+          <h3>Allergy Detection</h3>
+          <p>Automatically detect allergens like gluten, nuts, dairy, soy, and more.</p>
+        </div>
+        <div class="card" data-aos="zoom-in" data-aos-delay="300">
+          <img src="grading-icon.svg" alt="Grading Icon">
+          <h3>Smart Food Grading</h3>
+          <p>Get food grades based on health, additives, and ingredient clarity.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Engine -->
+  <section class="ingredients-ai" data-aos="fade-up">
+    <div class="container">
+      <h2>Powered by Ingredient Intelligence™</h2>
+      <p>TrustBite uses AI to read, interpret, and highlight critical ingredients you should care about — personalized to your dietary profile.</p>
+      <img src="ai-engine-illustration.svg" alt="AI Engine">
+    </div>
+  </section>
+
+  <!-- App Preview -->
+  <section class="app-preview" data-aos="fade-up">
+    <div class="container">
+      <h2>See TrustBite in Action</h2>
+      <div class="video-wrapper">
+        <video autoplay muted loop src="demo.mp4"></video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" data-aos="fade-up">
+    <div class="container">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial-cards">
+        <div class="testimonial" data-aos="flip-left">
+          <p>"TrustBite literally saved me from an allergic reaction!"</p>
+          <h4>— Jenna M.</h4>
+        </div>
+        <div class="testimonial" data-aos="flip-right">
+          <p>"I use it every time I shop — game changer!"</p>
+          <h4>— Alex D.</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download -->
+  <section id="download" class="cta-download" data-aos="zoom-in">
+    <div class="container">
+      <h2>Ready to Eat Smarter?</h2>
+      <p>Download TrustBite now and take control of your food.</p>
+      <a href="./downloads/app-release.apk" class="btn-primary" download>
+        <img src="android-icon.svg" alt="Android" style="height: 18px; vertical-align: middle; margin-right: 8px;">
+        Download for Android
+      </a>
+      <a href="#" class="btn-primary">Coming Soon on App Store</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>© 2025 TrustBite. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000 });
+
+    const toTop = document.getElementById("toTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        toTop.style.display = "block";
+      } else {
+        toTop.style.display = "none";
+      }
+    });
+
+    toTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+</body>
+</html>
